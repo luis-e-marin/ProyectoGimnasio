@@ -9,21 +9,33 @@ public class Premium extends Membresia {
 
     private static double calcularPrecio(TipoMembresia tipoMembresia) {
 
-        return switch (tipoMembresia) {
-            case MENSUAL -> 40000;
-            case TRIMESTRAL -> 110000;
-            case ANUAL -> 450000;
-            default -> 0;
-        };
+    if (tipoMembresia == TipoMembresia.MENSUAL) {
+        return 40000;
+    } else if (tipoMembresia == TipoMembresia.TRIMESTRAL) {
+        return 110000;
+    } else if (tipoMembresia == TipoMembresia.ANUAL) {
+        return 450000;
+    } else {
+        return 0;
+    }
+    }
     }
 
-    private static LocalDate calcularFechaFin (LocalDate fechaInicio, TipoMembresia tipoMembresia) {
-        return switch (tipoMembresia) {
-            case MENSUAL -> fechaInicio.plusMonths(1);
-            case TRIMESTRAL -> fechaInicio.plusMonths(3);
-            case ANUAL -> fechaInicio.plusYears(1);
-            default -> fechaInicio;
-        };
+    private static LocalDate calcularFechaFin(LocalDate fechaInicio, TipoMembresia tipoMembresia) {
+
+    if (tipoMembresia == TipoMembresia.MENSUAL) {
+        return fechaInicio.plusMonths(1);
+
+    } else if (tipoMembresia == TipoMembresia.TRIMESTRAL) {
+        return fechaInicio.plusMonths(3);
+
+    } else if (tipoMembresia == TipoMembresia.ANUAL) {
+        return fechaInicio.plusYears(1);
+
+    } else {
+        return fechaInicio;
+    }
+    }
     }
 
     @Override
