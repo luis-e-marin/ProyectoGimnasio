@@ -9,7 +9,7 @@ public class Membresia {
     private double precio;
     private boolean estado;
 
-    public Membresia(TipoMembresia,double precio,LocalDate fechaFin,LocalDate fechaInicio,boolean estado) {
+    public Membresia(TipoMembresia tipoMembresia,double precio,LocalDate fechaFin,LocalDate fechaInicio) {
         this.tipoMembresia = tipoMembresia;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
