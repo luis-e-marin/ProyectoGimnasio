@@ -9,20 +9,32 @@ public class VIP extends Membresia {
 
     private static double calcularPrecio(TipoMembresia tipoMembresia) {
 
-        return switch (tipoMembresia) {
-            case MENSUAL -> 60000;
-            case TRIMESTRAL -> 160000;
-            case ANUAL -> 700000;
-            default -> 0;
-        };
+    if (tipoMembresia == TipoMembresia.MENSUAL) {
+        return 60000;
+    } else if (tipoMembresia == TipoMembresia.TRIMESTRAL) {
+        return 170000;
+    } else if (tipoMembresia == TipoMembresia.ANUAL) {
+        return 700000;
+    } else {
+        return 0;
+    }
+    }
     }
 
-    private static LocalDate calcularFechaFin (LocalDate fechaInicio, TipoMembresia tipoMembresia) {
-        return switch (tipoMembresia) {
-            case MENSUAL -> fechaInicio.plusMonths(1);
-            case TRIMESTRAL -> fechaInicio.plusMonths(3);
-            case ANUAL -> fechaInicio.plusYears(1);
-            default -> fechaInicio;
-        };
+    private static LocalDate calcularFechaFin(LocalDate fechaInicio, TipoMembresia tipoMembresia) {
+
+    if (tipoMembresia == TipoMembresia.MENSUAL) {
+        return fechaInicio.plusMonths(1);
+
+    } else if (tipoMembresia == TipoMembresia.TRIMESTRAL) {
+        return fechaInicio.plusMonths(3);
+
+    } else if (tipoMembresia == TipoMembresia.ANUAL) {
+        return fechaInicio.plusYears(1);
+
+    } else {
+        return fechaInicio;
+    }
+    }
     }
 }
