@@ -25,4 +25,9 @@ public class Premium extends Membresia {
             default -> fechaInicio;
         };
     }
+
+    @Override
+    public String toString() {
+        return "Premium{}";
+    }
 }

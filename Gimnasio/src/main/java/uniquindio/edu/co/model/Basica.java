@@ -26,4 +26,8 @@ private static LocalDate calcularFechaFin (LocalDate fechaInicio, TipoMembresia 
         default -> fechaInicio;
     };
 }
+
+    public String toString() {
+        return "Membresía Básica - " + super.toString();
+    }
 }
