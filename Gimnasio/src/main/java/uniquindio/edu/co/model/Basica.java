@@ -18,7 +18,6 @@ public class Basica extends Membresia{
         }
     }
 
-
 private static LocalDate calcularFechaFin(LocalDate fechaInicio, TipoMembresia tipoMembresia) {
 
     if (tipoMembresia == TipoMembresia.MENSUAL) {
