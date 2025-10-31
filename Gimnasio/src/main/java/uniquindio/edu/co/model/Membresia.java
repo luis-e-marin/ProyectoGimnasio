@@ -9,7 +9,7 @@ public class Membresia {
     private double precio;
     private boolean estado;
 
-    public Membresia(TipoMembresia tipoMembresia,double precio,LocalDate fechaFin,LocalDate fechaInicio) {
+    public Membresia(TipoMembresia tipoMembresia, double precio, LocalDate fechaFin, LocalDate fechaInicio) {
         this.tipoMembresia = tipoMembresia;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
@@ -67,4 +67,9 @@ public class Membresia {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    public boolean estaActiva() {
+        return false;
+    }
+
 }

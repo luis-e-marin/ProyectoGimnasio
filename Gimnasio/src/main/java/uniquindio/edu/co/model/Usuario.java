@@ -5,16 +5,20 @@ private String nombre;
 private String identificacion;
 private int edad;
 private String telefono;
+Membresia membresia;
 
 public Usuario(String nombre, String identificacion, int edad, String telefono) {
     this.nombre = nombre;
     this.identificacion = identificacion;
     this.edad = edad;
     this.telefono = telefono;
+    this.membresia = membresia;
 }
+    public boolean tieneMembresiaActiva() {
+        return membresia != null && membresia.estaActiva();
+    }
 
-
-    public String getNombre() { 
+    public String getNombre() {
         return nombre;
     }
 
@@ -44,5 +48,16 @@ public Usuario(String nombre, String identificacion, int edad, String telefono) 
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Membresia getMembresia() {
+        return membresia;
+    }
+
+    public void setMembresia(Membresia membresia) {
+        this.membresia = membresia;
+    }
+
+    protected void asignarMembresia(Membresia membresia) {
     }
 }
