@@ -9,12 +9,16 @@ public class Membresia {
     private double precio;
     private boolean estado;
 
-    public Membresia(TipoMembresia tipoMembresia, double precio, LocalDate fechaFin, LocalDate fechaInicio) {
+    public Membresia(TipoMembresia tipoMembresia, double precio, LocalDate fechaInicio, LocalDate fechaFin) {
         this.tipoMembresia = tipoMembresia;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.precio = precio;
-        this.estado = estado;
+        this.estado = true;
+    }
+
+    public boolean isActiva() {
+        return estado && (fechaFin == null || !LocalDate.now().isAfter(fechaFin));
     }
 
     @Override
@@ -67,9 +71,5 @@ public class Membresia {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-
-    public boolean estaActiva() {
-        return false;
-    }
-
 }
+

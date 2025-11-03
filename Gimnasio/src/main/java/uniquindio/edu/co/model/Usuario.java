@@ -1,21 +1,37 @@
 package uniquindio.edu.co.model;
 
 public class Usuario {
-private String nombre;
-private String identificacion;
-private int edad;
-private String telefono;
-Membresia membresia;
+    private int idUsuario;
+    private String nombre;
+    private String telefono;
+    private Membresia membresia;
 
-public Usuario(String nombre, String identificacion, int edad, String telefono) {
-    this.nombre = nombre;
-    this.identificacion = identificacion;
-    this.edad = edad;
-    this.telefono = telefono;
-    this.membresia = membresia;
-}
-    public boolean tieneMembresiaActiva() {
-        return membresia != null && membresia.estaActiva();
+    public Usuario(int idUsuario, String nombre, String telefono) {
+        this.idUsuario = idUsuario;
+        this.nombre = nombre;
+        this.telefono = telefono;
+    }
+
+    public void asignarMembresia(Membresia membresia) {
+        this.membresia = membresia;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "idUsuario=" + idUsuario +
+                ", nombre='" + nombre + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", membresia=" + membresia +
+                '}';
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombre() {
@@ -24,22 +40,6 @@ public Usuario(String nombre, String identificacion, int edad, String telefono) 
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getIdentificacion() {
-        return identificacion;
-    }
-
-    public void setIdentificacion(String identificacion) {
-        this.identificacion = identificacion;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
     }
 
     public String getTelefono() {
@@ -56,8 +56,5 @@ public Usuario(String nombre, String identificacion, int edad, String telefono) 
 
     public void setMembresia(Membresia membresia) {
         this.membresia = membresia;
-    }
-
-    protected void asignarMembresia(Membresia membresia) {
     }
 }
