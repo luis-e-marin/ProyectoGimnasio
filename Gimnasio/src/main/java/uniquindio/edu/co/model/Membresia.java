@@ -16,6 +16,7 @@ public class Membresia {
         this.precio = precio;
         this.estado = true;
     }
+    //
 
     public boolean isActiva() {
         return estado && (fechaFin == null || !LocalDate.now().isAfter(fechaFin));
