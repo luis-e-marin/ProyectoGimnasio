@@ -38,6 +38,8 @@ public class ClaseDeportes {
         }
         return false;
     }
+    public void removerUsuario(Usuario usuario) {
+    }
 
     @Override
     public String toString() {
@@ -98,4 +100,6 @@ public class ClaseDeportes {
     public void setCupoActual(int cupoActual) {
         this.cupoActual = cupoActual;
     }
+
+
 }

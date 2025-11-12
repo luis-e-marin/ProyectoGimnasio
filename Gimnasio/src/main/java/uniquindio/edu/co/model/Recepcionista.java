@@ -76,11 +76,11 @@ public class Recepcionista {
 
     public void generarReporteClasesMasReservadas() {
         System.out.println("--CLASES MÁS RESERVADAS--");
-        for (ClaseDeportes clase : clases) {
+        for (ClaseDeportes claseDeportes : clases) {
             long cantidad = reservas.stream()
-                    .filter(r -> r.clases.equals(clase))
+                    .filter(r -> r.clases.equals(claseDeportes))
                     .count();
-            System.out.println(clase.getNombre() + ": " + cantidad + " reservas");
+            System.out.println(claseDeportes.getNombre() + ": " + cantidad + " reservas");
         }
     }
 
