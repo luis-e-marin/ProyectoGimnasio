@@ -5,8 +5,9 @@ public class Usuario {
     private String nombre;
     private String telefono;
     private Membresia membresia;
+    private String edad;
 
-    public Usuario(String idUsuario, String nombre, String telefono) {
+    public Usuario(String idUsuario, String nombre, String telefono, String edad) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -19,10 +20,11 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" +
-                "idUsuario=" + idUsuario +
+                "idUsuario='" + idUsuario + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", membresia=" + membresia +
+                ", edad=" + edad +
                 '}';
     }
 
@@ -56,5 +58,13 @@ public class Usuario {
 
     public void setMembresia(Membresia membresia) {
         this.membresia = membresia;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
     }
 }

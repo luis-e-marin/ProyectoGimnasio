@@ -4,8 +4,8 @@ public class TrabajdorUQ extends Usuario {
     private String dependencia;
     private double descuento;
 
-    public TrabajdorUQ(String idUsuario, String nombre, String telefono) {
-        super(idUsuario, nombre, telefono);
+    public TrabajdorUQ(String idUsuario, String nombre, String telefono,String edad) {
+        super(idUsuario, nombre, telefono, edad);
         this.dependencia = dependencia;
         this.descuento = 0.15;
     }

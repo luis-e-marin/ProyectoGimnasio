@@ -20,7 +20,6 @@ public class VIP extends Membresia {
             }
         }
 
-
         private static LocalDate calcularFechaFin(LocalDate fechaInicio, TipoMembresia tipoMembresia) {
 
             if (tipoMembresia == TipoMembresia.MENSUAL) {
