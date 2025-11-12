@@ -1,6 +1,6 @@
 package uniquindio.edu.co.model;
 
-public class Estudiante  extends Usuario{
+public class Estudiante  extends Usuario {
     private String programa;
     private double descuento;
 
@@ -9,6 +9,7 @@ public class Estudiante  extends Usuario{
         this.programa = programa;
         this.descuento = 0.10;
     }
+
     public void asignarMembresia(Membresia membresia) {
         double precioConDescuento = membresia.getPrecio() * (1 - descuento);
         membresia.setPrecio(precioConDescuento);
