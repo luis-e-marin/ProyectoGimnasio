@@ -1,12 +1,12 @@
 package uniquindio.edu.co.model;
 
 public class Usuario {
-    private int idUsuario;
+    private String idUsuario;
     private String nombre;
     private String telefono;
     private Membresia membresia;
 
-    public Usuario(int idUsuario, String nombre, String telefono) {
+    public Usuario(String idUsuario, String nombre, String telefono) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -26,11 +26,11 @@ public class Usuario {
                 '}';
     }
 
-    public int getIdUsuario() {
+    public String getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
 
