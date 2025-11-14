@@ -1,9 +1,19 @@
 package uniquindio.edu.co.model;
 
 public class TrabajdorUQ extends Usuario {
+    /**
+     * Atributos de la clase TrabajadorUQ
+     */
     private String dependencia;
     private double descuento;
 
+    /**
+     *
+     * @param idUsuario
+     * @param nombre
+     * @param telefono
+     * @param edad
+     */
     public TrabajdorUQ(String idUsuario, String nombre, String telefono,String edad) {
         super(idUsuario, nombre, telefono, edad);
         this.dependencia = dependencia;

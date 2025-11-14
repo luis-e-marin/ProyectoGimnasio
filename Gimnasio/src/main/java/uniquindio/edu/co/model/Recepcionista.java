@@ -5,12 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Recepcionista {
+    /**
+     * Atributos de la clase Recepcionista
+     */
     private String nombre;
     private String identificacion;
     private List<Usuario> usuarios;
     private List<ClaseDeportes> clases;
     private List<Reserva> reservas;
 
+    /**
+     *
+     * @param nombre
+     * @param identificacion
+     */
     public Recepcionista(String nombre, String identificacion) {
         this.nombre = nombre;
         this.identificacion = identificacion;
