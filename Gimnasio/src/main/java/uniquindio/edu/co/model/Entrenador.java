@@ -3,13 +3,13 @@ package uniquindio.edu.co.model;
 public class Entrenador {
 
     //atributos
-    private int idEntrenador;
+    private String  idEntrenador;
     private String nombre;
     private String especialidad;
     private double salario;
 
     //constructor
-    public Entrenador(int idEntrenador, String nombre, String especialidad, double salario) {
+    public Entrenador(String idEntrenador, String nombre, String especialidad, double salario) {
         this.idEntrenador = idEntrenador;
         this.nombre = nombre;
         this.especialidad = especialidad;
@@ -26,11 +26,11 @@ public class Entrenador {
                 '}';
     }
 
-    public int getIdEntrenador() {
+    public String getIdEntrenador() {
         return idEntrenador;
     }
 
-    public void setIdEntrenador(int idEntrenador) {
+    public void setIdEntrenador(String idEntrenador) {
         this.idEntrenador = idEntrenador;
     }
 

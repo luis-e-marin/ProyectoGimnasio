@@ -1,64 +1,56 @@
 package uniquindio.edu.co.model;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClaseDeportes {
 
-    //atributos
-    private int idClase;
     private String nombre;
-    private LocalDate fecha;
-    private LocalTime hora;
+    private String tipoEjercicio;
+    private LocalDateTime horario;
     private int cupoMaximo;
-    private int cupoActual;
+    private Entrenador entrenador;
+    private List<Usuario> usuariosReservados;
 
-//constructor
-    public ClaseDeportes(int idClase, String nombre, LocalDate fecha, LocalTime hora, int cupoMaximo) {
-        this.idClase = idClase;
+    public ClaseDeportes(String nombre, String tipoEjercicio, LocalDateTime horario, int cupoMaximo) {
         this.nombre = nombre;
-        this.fecha = fecha;
-        this.hora = hora;
+        this.tipoEjercicio = tipoEjercicio;
+        this.horario = horario;
         this.cupoMaximo = cupoMaximo;
-        this.cupoActual = 0;
+        this.entrenador = null;
+        this.usuariosReservados = new ArrayList<>();
     }
 
-    public boolean registrarParticipante() {
-        if (cupoActual < cupoMaximo) {
-            cupoActual++;
-            return true;
+    public boolean reservarCupo(Usuario usuario) {
+        if (usuariosReservados.size() >= cupoMaximo) {
+            System.out.println(" No hay cupos disponibles en la clase: " + nombre);
+            return false;
         }
-        return false;
+
+        usuariosReservados.add(usuario);
+        System.out.println(" Reserva registrada para: " + usuario.getNombre() + " en " + nombre);
+        return true;
     }
 
-    public boolean cancelarParticipante() {
-        if (cupoActual > 0) {
-            cupoActual--;
-            return true;
-        }
-        return false;
-    }
     public void removerUsuario(Usuario usuario) {
+        usuariosReservados.remove(usuario);
+    }
+
+    public boolean hayCupoDisponible() {
+        return usuariosReservados.size () < cupoMaximo;
     }
 
     @Override
     public String toString() {
         return "ClaseDeportes{" +
-                "idClase=" + idClase +
-                ", nombre='" + nombre + '\'' +
-                ", fecha=" + fecha +
-                ", hora=" + hora +
+                "nombre='" + nombre + '\'' +
+                ", tipoEjercicio='" + tipoEjercicio + '\'' +
+                ", horario=" + horario +
                 ", cupoMaximo=" + cupoMaximo +
-                ", cupoActual=" + cupoActual +
+                ", entrenador=" + entrenador +
+                ", usuariosReservados=" + usuariosReservados +
                 '}';
-    }
-
-    public int getIdClase() {
-        return idClase;
-    }
-
-    public void setIdClase(int idClase) {
-        this.idClase = idClase;
     }
 
     public String getNombre() {
@@ -69,20 +61,20 @@ public class ClaseDeportes {
         this.nombre = nombre;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
+    public String getTipoEjercicio() {
+        return tipoEjercicio;
     }
 
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
+    public void setTipoEjercicio(String tipoEjercicio) {
+        this.tipoEjercicio = tipoEjercicio;
     }
 
-    public LocalTime getHora() {
-        return hora;
+    public LocalDateTime getHorario() {
+        return horario;
     }
 
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
+    public void setHorario(LocalDateTime horario) {
+        this.horario = horario;
     }
 
     public int getCupoMaximo() {
@@ -93,13 +85,23 @@ public class ClaseDeportes {
         this.cupoMaximo = cupoMaximo;
     }
 
+    public Entrenador getEntrenador() {
+        return entrenador;
+    }
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
+    }
+
+    public List<Usuario> getUsuariosReservados() {
+        return usuariosReservados;
+    }
+
+    public void setUsuariosReservados(List<Usuario> usuariosReservados) {
+        this.usuariosReservados = usuariosReservados;
+    }
+
     public int getCupoActual() {
-        return cupoActual;
+        return usuariosReservados.size();
     }
-
-    public void setCupoActual(int cupoActual) {
-        this.cupoActual = cupoActual;
-    }
-
-
 }

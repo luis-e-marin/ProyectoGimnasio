@@ -6,34 +6,28 @@ public class Reserva {
     public ClaseDeportes clases;
     private String idReserva;
     private Usuario usuario;
-    private ClaseDeportes clase;
     private LocalDate fechaReserva;
     private boolean asistio;
 
-    public Reserva(Usuario usuario, ClaseDeportes clase, LocalDate fechaReserva) {
-        if (usuario == null || clase == null) {
-            throw new IllegalArgumentException("Usuario y clase no pueden ser nulos.");
-        }
-        this.idReserva = idReserva;
+    public Reserva(Usuario usuario, ClaseDeportes clase, LocalDate now) {
         this.usuario = usuario;
-        this.clase = clase;
-        this.fechaReserva = fechaReserva;
+        this.clases = clase;
+        this.fechaReserva = LocalDate.now();
         this.asistio = false;
     }
-
 
     public void registrarAsistencia() {
         if (!asistio) {
             this.asistio = true;
-            System.out.println(" Asistencia registrada para " + usuario.getNombre() + " en la clase " + clase.getNombre());
+            System.out.println(" Asistencia registrada para " + usuario.getNombre() + " en la clase " + clases.getNombre());
         } else {
             System.out.println("️ El usuario ya estaba marcado como asistente.");
         }
     }
 
     public void cancelarReserva() {
-        System.out.println(" Reserva cancelada: " + clase.getNombre() + " - Usuario: " + usuario.getNombre());
-        clase.removerUsuario(usuario);
+        System.out.println(" Reserva cancelada: " + clases.getNombre() + " - Usuario: " + usuario.getNombre());
+        clases.removerUsuario(usuario);
     }
 
     public boolean esValida() {
@@ -46,7 +40,6 @@ public class Reserva {
                 "clases=" + clases +
                 ", idReserva='" + idReserva + '\'' +
                 ", usuario=" + usuario +
-                ", clase=" + clase +
                 ", fechaReserva=" + fechaReserva +
                 ", asistio=" + asistio +
                 '}';
@@ -74,14 +67,6 @@ public class Reserva {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
-    }
-
-    public ClaseDeportes getClase() {
-        return clase;
-    }
-
-    public void setClase(ClaseDeportes clase) {
-        this.clase = clase;
     }
 
     public LocalDate getFechaReserva() {
