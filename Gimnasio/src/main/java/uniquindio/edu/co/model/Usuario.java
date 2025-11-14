@@ -1,12 +1,22 @@
 package uniquindio.edu.co.model;
 
 public class Usuario {
+    /**
+     *
+     */
     private String idUsuario;
     private String nombre;
     private String telefono;
     private Membresia membresia;
     private String edad;
 
+    /**
+     *
+     * @param idUsuario
+     * @param nombre
+     * @param telefono
+     * @param edad
+     */
     public Usuario(String idUsuario, String nombre, String telefono, String edad) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;

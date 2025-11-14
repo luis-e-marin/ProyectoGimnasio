@@ -1,9 +1,21 @@
 package uniquindio.edu.co.model;
 
 public class Estudiante  extends Usuario {
+
+    /**
+     * Atributos de la clase Estudiante
+     */
     private String programa;
     private double descuento;
 
+    /**
+     *
+     * @param idUsuario
+     * @param nombre
+     * @param edad
+     * @param telefono
+     * @param programa
+     */
     public Estudiante(String idUsuario, String nombre, String edad, String telefono, String programa) {
         super(idUsuario, nombre, edad, telefono);
         this.programa = programa;

@@ -2,9 +2,18 @@ package uniquindio.edu.co.model;
 
 import java.time.LocalDate;
 public class Basica extends Membresia{
+
+
+    /**
+     *
+     * @param fechaInicio
+     * @param tipoMembresia
+     */
+
     public Basica(LocalDate fechaInicio,TipoMembresia tipoMembresia) {
         super(tipoMembresia, calcularPrecio (tipoMembresia), fechaInicio, calcularFechaFin(fechaInicio, tipoMembresia));
     }
+
     private static double calcularPrecio(TipoMembresia tipoMembresia) {
 
         if (tipoMembresia == TipoMembresia.MENSUAL) {

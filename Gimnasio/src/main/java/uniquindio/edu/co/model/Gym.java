@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Gym {
-    
+
     private List<Usuario> usuarios;
     private List<Entrenador> entrenadores;
     private List<ClaseDeportes> clases;
     private List<Reserva> reservas;
+
 
     public Gym() {
         usuarios = new ArrayList<>();
@@ -17,6 +18,7 @@ public class Gym {
         clases = new ArrayList<>();
         reservas = new ArrayList<>();
     }
+
 
     public void registrarUsuario(Usuario usuario) {
         usuarios.add(usuario);

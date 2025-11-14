@@ -2,13 +2,22 @@ package uniquindio.edu.co.model;
 
 public class Entrenador {
 
-    //atributos
+    /**
+     *
+     * atributos de la clase Entrenador
+     */
     private String  idEntrenador;
     private String nombre;
     private String especialidad;
     private double salario;
 
-    //constructor
+    /**
+     *
+     * @param idEntrenador
+     * @param nombre
+     * @param especialidad
+     * @param salario
+     */
     public Entrenador(String idEntrenador, String nombre, String especialidad, double salario) {
         this.idEntrenador = idEntrenador;
         this.nombre = nombre;

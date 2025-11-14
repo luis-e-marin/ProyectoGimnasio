@@ -3,6 +3,12 @@ package uniquindio.edu.co.model;
 import java.time.LocalDate;
 
 public class Premium extends Membresia {
+
+    /**
+     *
+     * @param fechaInicio
+     * @param tipoMembresia
+     */
     public Premium(LocalDate fechaInicio, TipoMembresia tipoMembresia) {
         super(tipoMembresia, calcularPrecio (tipoMembresia), fechaInicio, calcularFechaFin(fechaInicio, tipoMembresia));
     }

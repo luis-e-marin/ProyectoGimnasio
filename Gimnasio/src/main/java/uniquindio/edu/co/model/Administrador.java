@@ -4,10 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Administrador extends Usuario {
+    /**
+     * Atributos de la clase Administrador
+     */
     private String contrasena;
     private List<Entrenador> entrenadores;
     private List<ClaseDeportes> clases;
 
+    /**
+     *
+     * @param idEntrenador
+     * @param nombre
+     * @param edad
+     * @param telefono
+     * @param contrasena
+     */
     public Administrador(String idEntrenador, String nombre, String edad, String telefono, String contrasena) {
         super(idEntrenador, nombre, edad, telefono);
         this.contrasena = contrasena;

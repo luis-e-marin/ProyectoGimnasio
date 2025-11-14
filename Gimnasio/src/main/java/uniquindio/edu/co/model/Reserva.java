@@ -3,12 +3,21 @@ package uniquindio.edu.co.model;
 import java.time.LocalDate;
 
 public class Reserva {
+    /**
+     * atributos de la clase Reserva
+     */
     public ClaseDeportes clases;
     private String idReserva;
     private Usuario usuario;
     private LocalDate fechaReserva;
     private boolean asistio;
 
+    /**
+     *
+     * @param usuario
+     * @param clase
+     * @param now
+     */
     public Reserva(Usuario usuario, ClaseDeportes clase, LocalDate now) {
         this.usuario = usuario;
         this.clases = clase;

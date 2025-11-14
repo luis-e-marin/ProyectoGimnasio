@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClaseDeportes {
-
+    /**
+     * Atributos de la clase ClaseDeportes
+     */
     private String nombre;
     private String tipoEjercicio;
     private LocalDateTime horario;
@@ -13,6 +15,13 @@ public class ClaseDeportes {
     private Entrenador entrenador;
     private List<Usuario> usuariosReservados;
 
+    /**
+     *
+     * @param nombre
+     * @param tipoEjercicio
+     * @param horario
+     * @param cupoMaximo
+     */
     public ClaseDeportes(String nombre, String tipoEjercicio, LocalDateTime horario, int cupoMaximo) {
         this.nombre = nombre;
         this.tipoEjercicio = tipoEjercicio;

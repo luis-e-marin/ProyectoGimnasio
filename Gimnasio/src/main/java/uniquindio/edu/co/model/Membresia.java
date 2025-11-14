@@ -3,12 +3,22 @@ package uniquindio.edu.co.model;
 import java.time.LocalDate;
 
 public class Membresia {
+    /**
+     * Atributos de la clase Membresia
+     */
     private TipoMembresia tipoMembresia;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private double precio;
     private boolean estado;
 
+    /**
+     *
+     * @param tipoMembresia
+     * @param precio
+     * @param fechaInicio
+     * @param fechaFin
+     */
     public Membresia(TipoMembresia tipoMembresia, double precio, LocalDate fechaInicio, LocalDate fechaFin) {
         this.tipoMembresia = tipoMembresia;
         this.fechaInicio = fechaInicio;
